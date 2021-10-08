@@ -42,9 +42,9 @@ router.get('/nota', async (req, res) => {
          })
     }
 
-})
+});
 
-router.delete('nota/:id', async (req, res) => {
+router.delete('/nota/:id', async (req, res) => {
     const _id = req.params.id;
     try {
         const notaDb = await Nota.findByIdAndDelete({_id});
@@ -61,7 +61,7 @@ router.delete('nota/:id', async (req, res) => {
             error
         })
     }
-})
+});
 
 
 router.put('/nota/:id', async (req, res)=>{
@@ -79,6 +79,6 @@ router.put('/nota/:id', async (req, res)=>{
             error
         })      
     }
-})
+});
 
 module.exports = router;

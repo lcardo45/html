@@ -5,6 +5,7 @@ const notaSchema = new Schema({
 
     nombre: {type: String, required: [true, 'Nombre obligatorio']},
     descripcion: String,
+    direccion: String,
     usuarioID: String,
     date: {type: Date, default: Date.now},
     activo:{type:Boolean, default: true}
