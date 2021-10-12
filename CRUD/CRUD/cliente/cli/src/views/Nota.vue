@@ -3,8 +3,20 @@
     
     <h1>Bienvenido</h1>
 
-  
-
+<!-- imagen encabexado -->
+ <div class="page-heading contact-heading header-text">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h4>Has tu pedido</h4>
+              <h2>San Parrilla</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- alertas -->
     <b-alert :show="dismissCountDown"
     dismissible
     :variant="mensaje.color"
@@ -15,7 +27,7 @@
     <form @submit.prevent="editarNota(notaEditar)" v-if="editar">
       
 
-      <h3>editar Nota</h3>
+      <h3>Editar Pedido</h3>
       <v-card
     class="overflow-hidden"
   >
@@ -46,47 +58,45 @@
       <v-text-field
         :disabled="!isEditing"
         color="white"
-        label="corte"
-      ><input type="text" class="form-control my-2" placeholder="Corte" v-model="notaEditar.corte"></v-text-field>
-      <v-autocomplete
+        
+      input type="text" class="form-control my-2" v-model="notaEditar.corte"></v-text-field>
+      <v-text-field
         :disabled="!isEditing"
-        :items="states"
-        :filter="customFilter"
         color="white"
-        item-text="name"
-        label="State"
-      ></v-autocomplete>
+        
+      input type="text" class="form-control my-2" v-model="notaEditar.cantidad"></v-text-field>
+     
+      <v-text-field
+        :disabled="!isEditing"
+        color="white"
+        
+      input type="text" class="form-control my-2" v-model="notaEditar.descripcion"></v-text-field>
+       <v-text-field
+        :disabled="!isEditing"
+        color="white"
+        input type="text" class="form-control my-2" v-model="notaEditar.nombre">></v-text-field>
+       <v-text-field
+        :disabled="!isEditing"
+        color="white"
+        
+      input type="text" class="form-control my-2" v-model="notaEditar.numero"></v-text-field>
+      <v-text-field
+        :disabled="!isEditing"
+        color="white"
+        
+      input type="text" class="form-control my-2" v-model="notaEditar.direccion"></v-text-field>
+      
     </v-card-text>
     <v-divider></v-divider>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn
-        :disabled="!isEditing"
-        color="success"
-        @click="save"
-      >
-        Save
-      </v-btn>
+      <b-button class="btn-success my-2" type="submit">Editar</b-button> 
     </v-card-actions>
-    <v-snackbar
-      v-model="hasSaved"
-      :timeout="2000"
-      absolute
-      bottom
-      left
-    >
-      Tu pedido ha sido editado
-    </v-snackbar>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+       <b-button class="my-2" type="submit" @click="editar=false">Cancelar</b-button>
+    </v-card-actions>
   </v-card>
-      <input type="text" class="form-control my-2" placeholder="Corte" v-model="notaEditar.corte">
-      <input type="text" class="form-control my-2" placeholder="Cantidad" v-model="notaEditar.cantidad">
-      <input type="text" class="form-control my-2" placeholder="Termino" v-model="notaEditar.descripcion">
-      <input type="text" class="form-control my-2" placeholder="direccion" v-model="notaEditar.nombre">
-      <input type="text" class="form-control my-2" placeholder="direccion" v-model="notaEditar.numero">
-      <input type="text" class="form-control my-2" placeholder="direccion" v-model="notaEditar.direccion">
-      <b-button class="btn-success my-2" type="submit">Editar</b-button>
-      <b-button class="my-2" type="submit" @click="editar=false">Cancelar</b-button>
-
     </form>
 
     <form @submit.prevent="agregarNota()" v-if="!editar">
@@ -509,3 +519,111 @@
 
 </script>
 
+<style>
+.contact-heading {
+  background-image: url(../assets/images/slide-carne-1.jpg);
+}
+.page-heading {
+  padding: 210px 0px 130px 0px;
+  text-align: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page-heading .text-content h4 {
+  color: #131010;
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.page-heading .text-content h2 {
+  color: rgb(10, 8, 8);
+  font-size: 62px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.col-md-10 {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 50px;
+}
+.col-md-8 {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+  padding: 40px;
+}
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+  padding: 40px;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+.contact-form input {
+  font-size: 14px;
+  width: 100%;
+  height: 44px;
+  display: inline-block;
+  line-height: 42px;
+  border: 1px solid #eee;
+  border-radius: 0px;
+  margin-bottom: 30px;
+}
+.contact-form input:focus {
+  box-shadow: none;
+  border: 1px solid #eee;
+}
+.contact-form textarea {
+  font-size: 14px;
+  width: 100%;
+  min-width: 100%;
+  min-height: 120px;
+  height: 120px;
+  max-height: 180px;
+  border: 1px solid #eee;
+  border-radius: 0px;
+  margin-bottom: 30px;
+}
+.contact-form textarea:focus {
+  box-shadow: none;
+  border: 1px solid #eee;
+}
+.contact-form button.filled-button {
+  background-color: #f33f3f;
+  color: #fff;
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 300;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: all 0.3s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.contact-form button.filled-button:hover {
+  background-color: #121212;
+  color: #fff;
+}
+.accordion {
+  margin-left: 30px;
+}
+.accordion a {
+  cursor: pointer;
+  font-size: 17px;
+  color: #1a6692 !important;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+.accordion a:hover {
+  color: #f33f3f !important;
+}
+.accordion a.active {
+  color: #f33f3f !important;
+}
+</style>

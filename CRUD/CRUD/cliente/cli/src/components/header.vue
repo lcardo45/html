@@ -7,7 +7,6 @@
       <router-link class="head" to="/about">Productos</router-link>
       <router-link class="head" to="/contact">Contáctanos</router-link>
       <router-link class="head" to="/Nota">Pedido</router-link>
-      <router-link class="head" to="/signup">Sign Up</router-link>
       </header>
     </div>
     <router-view/>

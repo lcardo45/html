@@ -29,11 +29,6 @@ const routes = [
     path: '/Nota',
     name: 'Nota',
     component: () => import(/* webpackChunkName: "nota" */ '../views/Nota.vue')
-  },
-  { 
-    path: '/signup',
-    name: 'SignUp',
-    component: () => import(/* webpackChunkName: "nota" */ '../views/SignUp.vue')
   }
 ]
 
