@@ -1,151 +1,119 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
-      </v-col>
-
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Discord Community</a>
-        </p>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          What's next?
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Important Links
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="best-features">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Acerca de San Parrilla</h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="left-content">
+            <h4>Looking for the best products?</h4>
+            <p>
+              <a rel="nofollow" href="/Nota" target="_parent">This Parrilla</a>
+              is free to use for your business websites. However, you have no
+              permission to redistribute the downloadable ZIP file on any
+              template collection website.
+              <a rel="nofollow" href="https://templatemo.com/contact"
+                >Contact us</a
+              >
+              for more info.
+            </p>
+            <ul class="featured-list">
+              <li><a href="#">Lorem ipsum dolor sit amet</a></li>
+              <li><a href="#">Consectetur an adipisicing elit</a></li>
+              <li><a href="#">It aquecorporis nulla aspernatur</a></li>
+              <li><a href="#">Corporis, omnis doloremque</a></li>
+              <li><a href="#">Non cum id reprehenderit</a></li>
+            </ul>
+            <a href="/about" class="filled-button">Read More</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="right-image">
+            <img src="../assets/images/carne-parrilla-1.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'HelloWorld',
-
-    data: () => ({
-      ecosystem: [
-        {
-          text: 'vuetify-loader',
-          href: 'https://github.com/vuetifyjs/vuetify-loader',
-        },
-        {
-          text: 'github',
-          href: 'https://github.com/vuetifyjs/vuetify',
-        },
-        {
-          text: 'awesome-vuetify',
-          href: 'https://github.com/vuetifyjs/awesome-vuetify',
-        },
-      ],
-      importantLinks: [
-        {
-          text: 'Documentation',
-          href: 'https://vuetifyjs.com',
-        },
-        {
-          text: 'Chat',
-          href: 'https://community.vuetifyjs.com',
-        },
-        {
-          text: 'Made with Vuetify',
-          href: 'https://madewithvuejs.com/vuetify',
-        },
-        {
-          text: 'Twitter',
-          href: 'https://twitter.com/vuetifyjs',
-        },
-        {
-          text: 'Articles',
-          href: 'https://medium.com/vuetify',
-        },
-      ],
-      whatsNext: [
-        {
-          text: 'Explore components',
-          href: 'https://vuetifyjs.com/components/api-explorer',
-        },
-        {
-          text: 'Select a layout',
-          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
-        },
-        {
-          text: 'Frequently Asked Questions',
-          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
-        },
-      ],
-    }),
-  }
+export default {
+  name: "HelloWorld",
+};
 </script>
+
+<style>
+.section-heading {
+  text-align: left;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+.about-features {
+  margin-top: 100px !important;
+}
+.about-features p {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+.about-features .container .row {
+  padding-bottom: 0px !important;
+  border-bottom: none !important;
+}
+.best-features {
+  margin-top: 50px;
+}
+.best-features .container .row {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 60px;
+}
+.best-features img {
+  width: 100%;
+  overflow: hidden;
+}
+.best-features h4 {
+  font-size: 17px;
+  color: #1a6692;
+  margin-bottom: 20px;
+}
+.best-features ul.featured-list li {
+  display: block;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.best-features p {
+  margin-bottom: 25px;
+  text-align: justify;
+}
+.best-features ul.featured-list li a {
+  font-size: 14px;
+  color: #4a4a4a;
+  font-weight: 300;
+  transition: all 0.3s;
+  position: relative;
+  padding-left: 13px;
+}
+.best-features ul.featured-list li a:before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  background-color: #4a4a4a;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+  top: 8px;
+}
+.best-features ul.featured-list li a:hover {
+  color: #f33f3f;
+}
+.best-features ul.featured-list li a:hover::before {
+  background-color: #f33f3f;
+}
+.best-features .filled-button {
+  margin-top: 20px;
+}
+</style>
